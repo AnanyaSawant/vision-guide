@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "http://@backendurl/$1"
+      "destination": "http://backendurl/$1"
     }
   ]
 }
