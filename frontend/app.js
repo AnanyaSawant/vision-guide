@@ -188,7 +188,7 @@ class VisionGuide {
             const imageData = this.captureFrame();
             
             // Send to API
-            const response = await fetch(`${this.apiUrl.value}/detect`, {
+            const response = await fetch(`/api/detect`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -367,8 +367,9 @@ async function askQuestion(query) {
         const imageData = guide.captureFrame();
         
         // Send query to API
+        
         const response = await fetch(
-            `${guide.apiUrl.value}/detect-with-query?query=${encodeURIComponent(query)}`,
+                `/api/detect-with-query?query=${encodeURIComponent(query)}`,
             {
                 method: 'POST',
                 headers: {
